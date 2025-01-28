@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>12 Tables</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .mySlides {
+      display: none;
+    }
+
+    img {
+      vertical-align: middle;
+    }
+
+    iframe {
+      width: 55%;
+      height: 350px;
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 1000px;
+      position: relative;
+      margin: auto;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active,
+    .dot:hover {
+      background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+      
+    }
+
+    @keyframes fade {
+      from {
+        opacity: .4
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <div style="text-align:center; visibility: hidden;">---</div>
+  <a href="index.pdf">Validation of index.html - Click to see</a>
+  <div style="text-align:center;">Navigation</div>
+  <div style="text-align:center;">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+    <span class="dot" onclick="currentSlide(5)"></span>
+    <span class="dot" onclick="currentSlide(6)"></span>
+    <span class="dot" onclick="currentSlide(7)"></span>
+    <span class="dot" onclick="currentSlide(8)"></span>
+    <span class="dot" onclick="currentSlide(9)"></span>
+    <span class="dot" onclick="currentSlide(10)"></span>
+    <span class="dot" onclick="currentSlide(11)"></span>
+    <span class="dot" onclick="currentSlide(12)"></span>
+  </div>
+
+  <div class="slideshow-container">
+
+    <!-- 12 slides -->
+    <div class="mySlides fade">
+      <h1>Table 1</h1><iframe src="Table1.html"></iframe>
+      <object class="pdf" data="Table1.pdf" width="600" height="500"></object>
+    </div>
+    <div class="mySlides fade">
+      <h1>Table 2</h1><iframe src="Table2.html"></iframe>
+      <object class="pdf" data="Table2.pdf" width="600" height="500"></object>
+    </div>
+    <div class="mySlides fade">
+      <h1>Table 3</h1><iframe src="Table3.html"></iframe>
+      <object class="pdf" data="Table3.pdf" width="600" height="500"></object>
+    </div>
+    <div class="mySlides fade">
+      <h1>Table 4</h1><iframe src="Table4.html"></iframe>
+      <object class="pdf" data="Table4.pdf" width="600" height="500"></object>
+    </div>
+    <div class="mySlides fade">
+      <h1>Table 5</h1><iframe src="Table5.html"></iframe>
+      <object class="pdf" data="Table5.pdf" width="600" height="500"></object>
+    </div>
+    <div class="mySlides fade">
+      <h1>Table 6</h1><iframe src="Table6.html"></iframe>
+      <object class="pdf" data="Table6.pdf" width="600" height="500"></object>
+    </div>
+    <div class="mySlides fade">
+      <h1>Table 7</h1><iframe src="Table7.html"></iframe>
+      <object class="pdf" data="Table7.pdf" width="600" height="500"></object>
+    </div>
+    <div class="mySlides fade">
+      <h1>Table 8</h1><iframe src="Table8.html"></iframe>
+      <object class="pdf" data="Table8.pdf" width="600" height="500"></object>
+    </div>
+    <div class="mySlides fade">
+      <h1>Table 9</h1><iframe src="Table9.html"></iframe>
+      <object class="pdf" data="Table9.pdf" width="600" height="500"></object>
+    </div>
+    <div class="mySlides fade">
+      <h1>Table 10</h1><iframe src="Table10.html"></iframe>
+      <object class="pdf" data="Table10.pdf" width="600" height="500"></object>
+    </div>
+    <div class="mySlides fade">
+      <h1>Table 11</h1><iframe src="Table11.html"></iframe>
+      <object class="pdf" data="Table11.pdf" width="600" height="500"></object>
+    </div>
+    <div class="mySlides fade">
+      <h1>Table 12</h1><iframe src="Table12.html"></iframe>
+      <object class="pdf" data="Table12.pdf" width="600" height="500"></object>
+    </div>
+
+  </div>
+  <br>
+
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+    }
+  </script>
+
+</body>
+
+</html>
